@@ -1,5 +1,5 @@
 var start = document.getElementById('start');
-var stop = document.getElementById('stop');
+var pause = document.getElementById('pause');
 var reset = document.getElementById('reset');
 
 var sm = document.getElementById('study_minutes');
@@ -31,7 +31,7 @@ reset.addEventListener('click', function(){
     startTimer = undefined;
 })
 
-stop.addEventListener('click', function(){
+pause.addEventListener('click', function(){
     stopInterval()
     startTimer = undefined;
 })
