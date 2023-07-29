@@ -1,12 +1,12 @@
 var start = document.getElementById('start');
-var pause = document.getElementById('pause');
+var stop = document.getElementById('stop');
 var reset = document.getElementById('reset');
 
-var sm = document.getElementById('study_minutes');
-var ss = document.getElementById('study_seconds');
+var wm = document.getElementById('w_minutes');
+var ws = document.getElementById('w_seconds');
 
-var bm = document.getElementById('break_minutes');
-var bs = document.getElementById('break_seconds');
+var bm = document.getElementById('b_minutes');
+var bs = document.getElementById('b_seconds');
 
 //store a reference to a timer variable
 var startTimer;
@@ -20,8 +20,8 @@ start.addEventListener('click', function(){
 })
 
 reset.addEventListener('click', function(){
-    sm.innerText = 25;
-    ss.innerText = "00";
+    wm.innerText = 25;
+    ws.innerText = "00";
 
     bm.innerText = 5;
     bs.innerText = "00";
@@ -31,7 +31,7 @@ reset.addEventListener('click', function(){
     startTimer = undefined;
 })
 
-pause.addEventListener('click', function(){
+stop.addEventListener('click', function(){
     stopInterval()
     startTimer = undefined;
 })
@@ -40,15 +40,15 @@ pause.addEventListener('click', function(){
 //Start Timer Function
 function timer(){
     //Work Timer Countdown
-    if(ss.innerText != 0){
-        ss.innerText--;
-    } else if(sm.innerText != 0 && ss.innerText == 0){
-        ss.innerText = 59;
-        sm.innerText--;
+    if(ws.innerText != 0){
+        ws.innerText--;
+    } else if(wm.innerText != 0 && ws.innerText == 0){
+        ws.innerText = 59;
+        wm.innerText--;
     }
 
     //Break Timer Countdown
-    if(sm.innerText == 0 && ss.innerText == 0){
+    if(wm.innerText == 0 && ws.innerText == 0){
         if(bs.innerText != 0){
             bs.innerText--;
         } else if(bm.innerText != 0 && bs.innerText == 0){
@@ -58,9 +58,9 @@ function timer(){
     }
 
     //Increment Counter by one if one full cycle is completed
-    if(sm.innerText == 0 && ss.innerText == 0 && bm.innerText == 0 && bs.innerText == 0){
-        sm.innerText = 25;
-        ss.innerText = "00";
+    if(wm.innerText == 0 && ws.innerText == 0 && bm.innerText == 0 && bs.innerText == 0){
+        wm.innerText = 25;
+        ws.innerText = "00";
 
         bm.innerText = 5;
         bs.innerText = "00";

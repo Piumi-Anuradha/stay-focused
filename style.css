@@ -31,7 +31,7 @@ h1 {
     font-weight: bold;
 }
 
-#study {
+#work {
     grid-area: 1 / 2 / 1 / 2;
 }
 #break {
@@ -60,7 +60,7 @@ p {
     color: red;
 }
 
-#study-timer {
+#work-timer {
     grid-area: 2 / 2 / 2 / 2;
 }
 
@@ -88,6 +88,6 @@ p {
     grid-area: 3 / 3 / 3 / 3;
 }
 
-#pause {
+#stop {
     grid-area: 3 / 4 / 3 / 4;
 }
